@@ -91,7 +91,7 @@ export default function ArticlePage(): React.JSX.Element {
   // --- Fetch all blogs ---
   const getBlogs = async () => {
     try {
-      const res = await fetch('https://bim-africa-backend.vercel.app/api/blogs');
+      const res = await fetch('https://my-backend.brandimagemarketer.workers.dev/api/blogs');
       const data: unknown = await res.json();
       const raw = extractBlogs(data);
 
@@ -122,7 +122,7 @@ export default function ArticlePage(): React.JSX.Element {
   const getBlog = async (currentId: string | null) => {
     if (!currentId) return;
     try {
-      const res = await fetch(`https://bim-africa-backend.vercel.app/api/blog/${currentId}`);
+      const res = await fetch(`https://my-backend.brandimagemarketer.workers.dev/api/blog/${currentId}`);
       const data: unknown = await res.json();
 
       let payload: unknown;

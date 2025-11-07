@@ -54,7 +54,7 @@ const [activeSlide, setActiveSlide] = useState(0);
     const [allFeatured, setAllFeatured] = useState<Blog[]>([]);
     const getBlogs = async () => {
         try {
-            const res = await fetch('https://bim-africa-backend.vercel.app/api/blogs');
+            const res = await fetch('https://my-backend.brandimagemarketer.workers.dev/api/blogs');
             const data = await res.json();
             console.log(data);
             const blogs = data.blogs.filter((blog:Blog) => blog.isFeature == false)
