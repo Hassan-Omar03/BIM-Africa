@@ -366,18 +366,31 @@ const t = {
       {/* ========================== HERO ========================== */}
       <section className="relative px-4 sm:px-8 py-10 sm:py-16 md:py-20 max-w-7xl mx-auto">
         <style>{`
-          @keyframes floatY { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
-          .float-y { animation: floatY 2s ease-in-out infinite; }
+  @keyframes floatY {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  .float-y {
+    animation: floatY 2s ease-in-out infinite;
+  }
 
-          @keyframes glowBlink {
-            0%, 100% { opacity: 1; box-shadow: 0 0 16px rgba(255, 31, 0, 0.10), 0 0 50px rgba(255, 31, 0, 0.35); }
-            50% { opacity: .65; box-shadow: 0 0 6px rgba(255, 31, 0, 0.00), 0 0 20px rgba(255, 31, 0, 0.18); }
-          }
-          .glow-blink { animation: glowBlink 1.2s ease-in-out infinite; }
+  @keyframes glowBlink {
+    0%, 100% {
+      opacity: 1;
+      box-shadow: 0 0 16px rgba(255, 31, 0, 0.10),
+                  0 0 50px rgba(255, 31, 0, 0.35);
+    }
+    50% {
+      opacity: 1; /* ✅ no more opacity flicker */
+      box-shadow: 0 0 16px rgba(255, 31, 0, 0.10),
+                  0 0 50px rgba(255, 31, 0, 0.35);
+    }
+  }
+  .glow-blink {
+    animation: glowBlink 1.2s ease-in-out infinite;
+  }
+`}</style>
 
-          @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
-          .blink { animation: blink 2.2s ease-in-out infinite; }
-        `}</style>
 
         <div className="grid lg:grid-cols-2 gap-10 items-start">
           {/* left copy */}

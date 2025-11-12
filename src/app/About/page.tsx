@@ -22,6 +22,7 @@ import webStrategy from "../../Assests/WebsiteStrategy.png";
 import hasan from "../../Assests/hasan.png";
 import rahul from "../../Assests/rahul.png";
 import ronit from "../../Assests/ronit.jpeg"
+import man from "../../Assests/about.jpeg"
 
 /* ✅ Visionaries Data */
 const visionaries = [
@@ -98,41 +99,40 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          {/* Right copy */}
-          <div className="relative mx-auto lg:mx-0 hidden md:block">
-            <div className="max-w-[520px] md:ml-auto md:text-start text-center">
-              <p className="text-white leading-relaxed">
-                Blending design precision with enterprise-level security and
-                performance. Every project is guided by{" "}
-                <span className="text-[#ff1f00] font-semibold">
-                  integrity, transparency
-                </span>
-                , and a relentless focus on client success.
-              </p>
+         <div className="relative mx-auto mt-10
+          lg:mx-0 hidden md:block">
+  <div className="rounded-2xl overflow-hidden border border-gray-800 bg-black/40 shadow-xl">
+    
+    {/* ✅ Image Section */}
+    <div className="relative aspect-[16/12] sm:aspect-[16/10]">
+      <Image
+        src={man} // 👈 Your static image
+        alt="BMS Operator at work"
+        fill
+        className="object-cover"
+        priority // ✅ Ensures it's fetched early
+        loading="eager"
+        fetchPriority="high"
+      />
+    </div>
+  </div>
 
-              <h3 className="text-white text-3xl mt-8">Ready to Transform?</h3>
-              <p className="text-white mt-3">
-                Discover our premium services and start your digital
-                transformation journey today.
-              </p>
+  {/* ✅ Buttons placed OUTSIDE image container */}
+  <div className="mt-6 flex flex-wrap gap-4 items-center justify-center md:justify-start">
+    <Link href="/service">
+      <button className="w-full sm:w-auto bg-[#333333] border border-transparent hover:border-[#ff1f00] text-white px-8 sm:px-10 lg:px-12 py-3 sm:py-4 rounded-full transition-all hover:scale-105 text-sm sm:text-base whitespace-nowrap">
+        View Services
+      </button>
+    </Link>
 
-              <div className="mt-8 flex flex-wrap gap-4 items-center justify-center md:justify-start">
-                <Link href="/service">
-                  <button className="w-full sm:w-auto bg-[#333333] border border-transparent hover:border-[#ff1f00] text-white px-8 sm:px-10 lg:px-12 py-3 sm:py-4 rounded-full transition-all hover:scale-105 text-sm sm:text-base whitespace-nowrap">
-                    View Services
-                  </button>
-                </Link>
-
-                <Link href="/contactus">
-                  <button className="w-full sm:w-auto bg-[#333333] border border-transparent hover:border-[#ff1f00] text-white px-8 sm:px-10 lg:px-8 py-3 sm:py-4 rounded-full transition-all hover:scale-105 text-sm sm:text-base whitespace-nowrap">
-                    Start Your Project
-                  </button>
-                </Link>
-              </div>
-            </div>
-
+    <Link href="/contactus">
+      <button className="w-full sm:w-auto bg-[#333333] border border-transparent hover:border-[#ff1f00] text-white px-8 sm:px-10 lg:px-12 py-3 sm:py-4 rounded-full transition-all hover:scale-105 text-sm sm:text-base whitespace-nowrap">
+        Start Your Project
+      </button>
+    </Link>
+  </div>
+</div>
             
-          </div>
         </div>
       </section>
 
@@ -309,50 +309,51 @@ export default function ServicesPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-20 lg:gap-40 items-center">
               {/* Mission */}
-              <div className="relative">
-                <Card className="bg-black backdrop-blur-xl border border-[#ff1f00] shadow-2xl rounded-3xl sm:rounded-[4rem] overflow-hidden relative group">
-                  <CardContent className="p-6 sm:p-10 lg:p-16 relative z-10">
-                    <div className="text-center mb-8 sm:mb-12">
-                      <div className="w-20 h-20 sm:w-28 sm:h-28 bg-gradient-to-br from-red-700 to-red-700 rounded-full flex items-center justify-center mx-auto mb-6 sm:mb-10 border-4 border-[#ff1f00] group-hover:scale-110 group-hover:rotate-12 shadow-2xl transition-transform">
-                        <Target className="w-10 h-10 sm:w-14 sm:h-14 text-red-300" />
-                      </div>
-                      <h3 className="text-3xl sm:text-5xl text-white mb-6 sm:mb-8 group-hover:text-[#ff1f00] transition-colors">
-                        Our Mission
-                      </h3>
-                    </div>
-                    <div className="space-y-4 sm:space-y-6">
-                      <div className="h-1 sm:h-2 bg-red-700 rounded-full shadow-lg"></div>
-                      <p className="text-gray-200 text-base sm:text-xl leading-relaxed">
-                        To empower businesses with premium website design,
-                        cybersecurity, and digital support services — delivering
-                        trust, performance, and excellence in every project.
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+              <div className="relative flex justify-center">
+  <Card className="bg-black backdrop-blur-xl border border-[#ff1f00] shadow-2xl rounded-3xl sm:rounded-[4rem] overflow-hidden relative group w-full max-w-[450px]">
+    <CardContent className="p-6 sm:p-10 lg:p-8 relative z-10">
+      <div className="text-center mb-8 sm:mb-12">
+        <div className="w-20 h-20 sm:w-20 sm:h-20 bg-gradient-to-br from-red-700 to-red-700 rounded-full flex items-center justify-center mx-auto mb-6 sm:mb-10 border-4 border-[#ff1f00] group-hover:scale-110 group-hover:rotate-12 shadow-2xl transition-transform">
+          <Target className="w-10 h-10 sm:w-10 sm:h-10 text-red-300" />
+        </div>
+        <h3 className="text-3xl sm:text-4xl text-white mb-6 sm:mb-8 group-hover:text-[#ff1f00] transition-colors">
+          Our Mission
+        </h3>
+      </div>
+      <div className="space-y-4 sm:space-y-6">
+        <div className="h-1 sm:h-2 bg-red-700 rounded-full shadow-lg"></div>
+        <p className="text-gray-200 text-base sm:text-lg leading-relaxed">
+          To empower businesses with premium website design,
+          cybersecurity, and digital support services — delivering
+          trust, performance, and excellence in every project.
+        </p>
+      </div>
+    </CardContent>
+  </Card>
+</div>
 
               {/* Vision */}
-              <div className="relative lg:mt-32">
-                <Card className="bg-black backdrop-blur-xl border border-[#ff1f00] shadow-2xl rounded-3xl sm:rounded-[4rem] overflow-hidden relative group">
-                  <CardContent className="p-6 sm:p-10 lg:p-16 relative z-10">
-                    <div className="text-center mb-8 sm:mb-12">
-                      <div className="w-20 h-20 sm:w-28 sm:h-28 bg-gradient-to-br from-red-700 to-red-700 rounded-full flex items-center justify-center mx-auto mb-6 sm:mb-10 border-4 border-[#ff1f00] group-hover:scale-110 group-hover:rotate-12 shadow-2xl transition-transform">
-                        <Rocket className="w-10 h-10 sm:w-14 sm:h-14 text-red-300" />
-                      </div>
-                      <h3 className="text-3xl sm:text-5xl text-white mb-6 sm:mb-8 group-hover:text-[#ff1f00] transition-colors">
-                        Our Vision
-                      </h3>
-                    </div>
-                    <div className="space-y-4 sm:space-y-6">
-                      <div className="h-1 sm:h-2 bg-red-700 rounded-full shadow-lg"></div>
-                      <p className="text-gray-200 text-base sm:text-xl leading-relaxed">
-                        To build a world-class digital institution from Mauritius — one that unites Africa and Europe through innovation, technology, and trust, shaping the future of how businesses go digital.
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+              <div className="relative lg:mt-32 flex justify-center">
+  <Card className="bg-black backdrop-blur-xl border border-[#ff1f00] shadow-2xl rounded-3xl sm:rounded-[4rem] overflow-hidden relative group w-full max-w-[450px]">
+    <CardContent className="p-6 sm:p-10 lg:p-6 relative z-10">
+      <div className="text-center mb-8 sm:mb-12">
+        <div className="w-20 h-20 sm:w-20 sm:h-20 bg-gradient-to-br from-red-700 to-red-700 rounded-full flex items-center justify-center mx-auto mb-6 sm:mb-10 border-4 border-[#ff1f00] group-hover:scale-110 group-hover:rotate-12 shadow-2xl transition-transform">
+          <Rocket className="w-10 h-10 sm:w-10 sm:h-10 text-red-300" />
+        </div>
+        <h3 className="text-3xl sm:text-4xl text-white mb-6 sm:mb-8 group-hover:text-[#ff1f00] transition-colors">
+          Our Vision
+        </h3>
+      </div>
+      <div className="space-y-4 sm:space-y-6">
+        <div className="h-1 sm:h-2 bg-red-700 rounded-full shadow-lg"></div>
+        <p className="text-gray-200 text-base sm:text-lg leading-relaxed">
+          To build a world-class digital institution from Mauritius — one that unites Africa and Europe through innovation, technology, and trust, shaping the future of how businesses go digital.
+        </p>
+      </div>
+    </CardContent>
+  </Card>
+</div>
+
             </div>
           </div>
         </div>
