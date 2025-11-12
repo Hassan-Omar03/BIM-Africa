@@ -11,6 +11,7 @@ import {
   Phone,
   Clock,
   Building,
+  MessageCircle 
 } from "lucide-react";
 
 import Navbar from "../Components/Navbar";
@@ -106,7 +107,7 @@ export default function ContactPage() {
 </section>
 
 {/* ✅ Contact Info Section */}
-<section className="px-4 sm:px-6 pt-6 pb-8 max-w-6xl mx-auto bg-black/80 rounded-2xl mb-10">
+<section className="px-4 sm:px-6 pt-6 pb-8 max-w-6xl mx-auto bg-black/80 rounded-2xl mb-2">
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
     {/* Email */}
     <button
@@ -293,22 +294,28 @@ export default function ContactPage() {
               errors, reach us instantly.
             </p>
 
-            <button
-              className="w-full bg-white text-[#ff1f00] font-semibold px-6 py-3 rounded-lg hover:shadow-lg transition"
-              onClick={() => (window.location.href = "tel:+23054514176")}
-            >
-              <Phone className="inline w-5 h-5 mr-2" />
-              Call Now – Emergency Line
-            </button>
+          <a
+  href="tel:+23054514176"
+  className="block w-full bg-white text-[#ff1f00] font-semibold px-6 py-3 rounded-lg hover:shadow-lg transition"
+>
+  <div className="flex items-center justify-center gap-2">
+    <Phone className="w-5 h-5 text-[#ff1f00]" />
+    <span>Call Now – Emergency Line</span>
+  </div>
+</a>
+           <a
+  href="https://wa.me/352661784276"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block w-full mt-4 bg-white text-[#ff1f00] font-semibold px-6 py-3 rounded-lg hover:shadow-lg transition"
+>
+  <div className="flex items-center justify-center gap-2">
+    {/* ✅ Lucide WhatsApp-like icon */}
+    <MessageCircle className="w-5 h-5 text-[#ff1f00]" />
+    <span>WhatsApp Us – Priority Chat</span>
+  </div>
+</a>
 
-            <a
-              href="https://wa.me/352661784276"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full mt-4 bg-white text-[#ff1f00] font-semibold px-6 py-3 rounded-lg hover:shadow-lg transition"
-            >
-              WhatsApp Us – Priority Chat
-            </a>
           </div>
 
           {/* Excellence Section */}

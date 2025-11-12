@@ -17,8 +17,10 @@ const geistMono = Geist_Mono({
 
 // ✅ SEO & favicon metadata
 export const metadata: Metadata = {
-  title: "BIM | Website Development, IT Outsourcing & Cybersecurity — Mauritius, Europe & Luxembourg",
-  description: "BIM helps ambitious businesses build world-class websites, scale operations with digital outsourcing, and stay secure through advanced cybersecurity solutions. Based in Mauritius, serving clients across Europe and Luxembourg.",
+  title:
+    "BIM | Website Development, IT Outsourcing & Cybersecurity — Mauritius, Europe & Luxembourg",
+  description:
+    "BIM helps ambitious businesses build world-class websites, scale operations with digital outsourcing, and stay secure through advanced cybersecurity solutions. Based in Mauritius, serving clients across Europe and Luxembourg.",
   keywords: [
     "website design Mauritius",
     "website design Luxembourg",
@@ -42,7 +44,7 @@ export const metadata: Metadata = {
     siteName: "BIM Africa",
     images: [
       {
-        url: "/logo.png",
+        url: "/favicon.ico",
         width: 1200,
         height: 630,
         alt: "BIM Africa – Website Development, IT Outsourcing & Cybersecurity",
@@ -52,8 +54,17 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: "/logo.png", // The standard favicon // Chrome + Safari
-    apple: "/apple-touch-icon.png", // ✅ iOS
+    icon: [
+      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/favicon-96x96.png", type: "image/png", sizes: "96x96" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: { url: "/apple-touch-icon.png", sizes: "180x180" },
+    shortcut: "/favicon.ico",
+  },
+  manifest: "/site.webmanifest",
+  other: {
+    "apple-mobile-web-app-title": "BIM Africa - Brand Image Marketer Ltd",
   },
   alternates: {
     canonical: "https://bim.africa",
@@ -74,9 +85,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* ✅ Favicon + meta essentials */}
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="apple-touch-icon" href="/logo.png" />
+        {/* ✅ Meta essentials not covered by Metadata API */}
         <meta name="theme-color" content="#ffffff" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="author" content="BIM Africa" />
