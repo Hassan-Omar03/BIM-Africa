@@ -19,9 +19,9 @@ import WorkTogether from "../Components/WorkTogether";
 /* Assets */
 import logo from "../../Assests/srv.svg";
 import webStrategy from "../../Assests/WebsiteStrategy.png";
-import hasan from "../../Assests/hasan.png";
-import rahul from "../../Assests/rahul.png";
-import ronit from "../../Assests/ronit.jpeg"
+import hasan from "../../Assests/hassan2.png";
+import rahul from "../../Assests/rahul2.png";
+import ronit from "../../Assests/ronit.png"
 import man from "../../Assests/about.jpeg"
 
 /* ✅ Visionaries Data */
@@ -166,35 +166,7 @@ export default function ServicesPage() {
                     placeholder="blur"
                   />
 
-                  {/* Eye Badge */}
-                  <div
-                    className="absolute top-4 right-4 w-12 h-12 rounded-lg bg-[#ff1f00]/10 border border-[#ff1f00]/40 
-                    flex items-center justify-center backdrop-blur-sm group-hover:bg-[#ff1f00]/20 
-                    group-hover:scale-110 transition-all duration-500"
-                  >
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      className="group-hover:drop-shadow-[0_0_5px_#ff1f00]"
-                    >
-                      <path
-                        d="M2 12s4-8 10-8 10 8 10 8-4 8-10 8S2 12 2 12z"
-                        stroke="#FF6F6F"
-                        strokeWidth="1.3"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <circle
-                        cx="12"
-                        cy="12"
-                        r="3"
-                        stroke="#FF6F6F"
-                        strokeWidth="1.3"
-                      />
-                    </svg>
-                  </div>
+                 
                 </div>
 
                 {/* Content Section */}

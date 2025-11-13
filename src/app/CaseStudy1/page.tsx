@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -10,35 +10,25 @@ import {
   Linkedin as Linked,
   X,
   ArrowRight,
+  TrendingUp,
+  Globe,
+  CheckCircle,
+  Star,
+  MessageSquare,
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
-/* Assets used by header/footer (kept unchanged) */
 import logo from "../../Assests/srv.svg";
 import logo2 from "../../Assests/newlogo.png";
 import header from "../../Assests/HEADER.png";
 import mobile from "../../Assests/new.jpeg";
 import selected from "../../Assests/selected.png";
 import nonselected from "../../Assests/nonselected.png";
+import noumarmite from "../../Assests/noumarmite.png";   // <-- ADDED
 
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 
 export default function ServicesPage() {
-  
-
- 
-  
-  /* animation helpers */
-  const backdropVariants = { hidden: { opacity: 0 }, visible: { opacity: 0.55 }, exit: { opacity: 0 } };
-  const panelVariants = {
-    hidden: { opacity: 0, y: -30, rotateX: 14, transformOrigin: "top center", scale: 0.995 },
-    visible: { opacity: 1, y: 0, rotateX: 0, scale: 1, transition: { duration: 0.3, ease: [0.22, 0.8, 0.2, 1] } },
-    exit: { opacity: 0, y: -28, rotateX: 12, scale: 0.995, transition: { duration: 0.22, ease: "easeInOut" } },
-  };
-  const listContainer = { hidden: {}, visible: { transition: { staggerChildren: 0.05, delayChildren: 0.06 } } };
-  const listItem = { hidden: { opacity: 0, y: 8 }, visible: { opacity: 1, y: 0, transition: { duration: 0.22, ease: "easeOut" } } };
-
   return (
     <div
       className="min-h-screen text-white"
@@ -49,79 +39,206 @@ export default function ServicesPage() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <Navbar/>
-      {/* helper for mobile bg repeat */}
+      <Navbar />
+
+      {/* Mobile background fix */}
       <style>{`
         @media (max-width: 640px) {
           .bg-hero { background-repeat: repeat-y !important; background-size: 100% auto !important; background-position: top center !important; }
-       
+        }
       `}</style>
 
-      {/* ================== MAIN: TEXT-ONLY FULL PAGE CASE STUDY ================== */}
-      <main className="py-16">
-        <div className="mx-auto max-w-[900px] px-6">
-          <article className="bg-black/30 border border-white/6 rounded-2xl p-8 md:p-12">
-            <h1 className="text-2xl md:text-3xl font-semibold text-white mb-6">NouMarmite: The First Ever Creole Website in Mauritius</h1>
+      {/* ================== MAIN CONTENT ================== */}
+      <main className="py-10">
+        <div className="mx-auto max-w-[1200px] px-6 grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+          {/* ================== LEFT: CASE STUDY ARTICLE ================== */}
+          <article className="bg-black/30 border border-white/6 rounded-2xl p-8 md:p-12 lg:col-span-2">
+
+  {/* === Image + Title Row === */}
+  <div className="flex items-center gap-4 mb-6">
+    <Image
+      src={noumarmite}
+      alt="Mauritius Health Travel"
+  className="w-12 h-12 rounded-xl object-contain"
+    />
+
+    <h2 className="text-sm font-medium text-gray-300 uppercase tracking-wide">
+      A case study of:{" "}
+      <span className="text-[#ff1f00] font-semibold">NouMarmite</span>
+    </h2>
+  </div>
+            {/* === Chips Section === */}
+           <div className="flex flex-wrap gap-3 mb-6">
+
+  <span className="inline-flex items-center whitespace-nowrap px-4 py-2 bg-[#333333] border border-transparent hover:border-[#ff1f00] text-[#ff1f00] text-xs rounded-full">
+    Industry: Food & Beverages
+  </span>
+
+  <span className="inline-flex items-center whitespace-nowrap px-4 py-2 bg-[#333333] border border-transparent hover:border-[#ff1f00] text-[#ff1f00] text-xs rounded-full">
+    Service: Marketing & Branding
+  </span>
+  
+  <a
+  href="https://noumarmite.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center whitespace-nowrap px-4 py-2 bg-[#333333] border border-transparent hover:border-[#ff1f00] text-[#ff1f00] text-xs rounded-full"
+>
+  Visit Website
+</a>
+
+
+</div>
+
+
+            {/* === MAIN TITLE (now below the chips) === */}
+            <h1 className="text-2xl md:text-3xl font-semibold text-white mb-6">
+              The First Ever Creole Website in Mauritius
+            </h1>
+
+            {/* === ORIGINAL CONTENT BELOW (unchanged) === */}
 
             <h2 className="text-[#ff1f00] font-semibold mb-2">Client Overview</h2>
             <p className="text-white/90 mb-6">
-              NouMarmite is a small, family-run restaurant in Mauritius, known for its authentic Creole dishes prepared with love and simplicity. The brand embodies the Mauritian spirit — humble, flavorful, and deeply rooted in tradition. While Nou Marmite operates on a small scale, its story represents a significant step in how local culture meets the digital world.
+              NouMarmite is a small, family-run restaurant in Mauritius, known for its authentic Creole dishes prepared with love and simplicity. The brand embodies the Mauritian spirit — humble, flavorful, and deeply rooted in tradition.
             </p>
 
             <h2 className="text-[#ff1f00] font-semibold mb-2">The Challenge</h2>
             <p className="text-white/90 mb-4">
-              Back in 2019, when websites were still uncommon among small businesses in Mauritius, Nou Marmite wanted to do something truly different. The goal was not just to “go online,” but to create a digital space that felt real, local, and authentic — a true reflection of Mauritian culture.
+              Back in 2019, when websites were still uncommon among small businesses in Mauritius, Nou Marmite wanted to do something truly different.
             </p>
+
             <p className="text-white/90 mb-6">
-              The vision was clear: a website entirely in Mauritian Creole.
-              At the time, no business in Mauritius had ever launched a full Creole website — not in the food industry, not anywhere. It was a bold, first-of-its-kind idea that required both creativity and cultural sensitivity.
+              The vision was clear: a website entirely in Mauritian Creole — the first ever in the country.
             </p>
 
             <h2 className="text-[#ff1f00] font-semibold mb-2">The Solution</h2>
             <p className="text-white/90 mb-4">
-              BIM Africa took on the challenge to bring this vision to life. The project became an opportunity to break linguistic boundaries and show that digital design can speak the people’s language — literally.
-              We crafted the first ever Mauritian Creole website, proudly setting a milestone for local digital innovation.
+              BIM Africa took on the challenge and crafted the first ever Mauritian Creole website, proudly setting a milestone for local digital innovation.
             </p>
 
-            <p className="text-white/90 mb-4">
-              Our approach focused on three main pillars:
-            </p>
+            <p className="text-white/90 mb-4">Our approach focused on three main pillars:</p>
 
             <ul className="list-disc list-inside text-white/90 mb-6 space-y-2">
-              <li><strong>Language & Culture:</strong> Every line of text was written directly in Creole, not translated. This allowed the website to sound genuinely Mauritian — warm, natural, and relatable.</li>
-              <li><strong>Design & Emotion:</strong> The visuals captured the essence of home-cooked meals, using earthy colors and textures that resonated with local culture.</li>
-              <li><strong>Accessibility:</strong> We optimized for mobile users, ensuring even those with limited data could easily browse and connect.</li>
+              <li><strong>Language & Culture:</strong> Written natively in Creole.</li>
+              <li><strong>Design & Emotion:</strong> Visual identity rooted in Mauritian culture.</li>
+              <li><strong>Accessibility:</strong> Optimized for mobile-first audiences.</li>
             </ul>
 
             <h2 className="text-[#ff1f00] font-semibold mb-2">The Outcome</h2>
             <p className="text-white/90 mb-6">
-              When NouMarmite.com went live in 2019, it quietly made history — the first ever Creole-language website in Mauritius.
-              The site quickly attracted attention from the local community for its uniqueness. Customers loved how it “spoke their language,” both literally and emotionally. It became a proud digital symbol of Mauritian culture — proving that small businesses can innovate meaningfully without losing their roots.
-            </p>
-
-            <p className="text-white/90 mb-6">
-              Even today, Nou Marmite’s online presence remains a cultural reference point. It wasn’t built to scale big; it was built to stay real — and that authenticity continues to connect with its audience.
+              NouMarmite.com became a cultural milestone — the first Mauritian Creole business website.
             </p>
 
             <h3 className="text-[#ff1f00] font-semibold mb-3">Key Results</h3>
             <ul className="text-white/90 list-none space-y-2 mb-6">
-              <li>●✅ First ever website fully in Mauritian Creole (2019)</li>
-              <li>●✅ Set a national precedent in digital language use</li>
-              <li>●✅ Strengthened cultural identity through design</li>
-              <li>●✅ Recognized locally for originality and authenticity</li>
-              <li>●✅ Increased brand trust and visibility despite being a small business</li>
+              <li>● First ever Mauritian Creole website (2019)</li>
+              <li>● National precedent in digital language usage</li>
+              <li>● Strong cultural identity</li>
+              <li>● Increased trust and visibility</li>
             </ul>
 
             <h3 className="text-[#ff1f00] font-semibold mb-2">Reflection</h3>
             <p className="text-white/90">
-              For BIM Africa, Nou Marmite represents more than just a project — it’s a symbol of creative courage. It reminded us that innovation isn’t always about size or technology; sometimes, it’s about daring to do something authentically yours.
+              For BIM Africa, Nou Marmite represents more than a project — it’s a symbol of creative courage.
             </p>
           </article>
+
+          {/* ================== RIGHT: SIDEBAR ================== */}
+          <aside className="space-y-6">
+
+            {/* 🔥 Consultation Box */}
+            <div className="rounded-3xl bg-[#ff1f00] p-6">
+              <div className="mx-auto w-16 h-16 rounded-full border border-[#ff1f00] flex items-center justify-center mb-4">
+                <TrendingUp className="w-7 h-7 text-white" />
+              </div>
+
+              <h4 className="text-xl font-semibold text-center">
+                Ready to Secure Your Business?
+              </h4>
+              <p className="text-gray-200 text-center mt-2">
+                Get expert cybersecurity consultation tailored to your needs
+              </p>
+
+              <a
+                href="https://quotation.bim.africa/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block mt-4"
+              >
+                <button className="w-full inline-flex items-center justify-center gap-2 bg-white text-[#ff1f00] hover:bg-red-50 px-5 py-3 rounded-xl font-semibold">
+                  <Globe className="w-4 h-4" /> Get Free Consultation
+                </button>
+              </a>
+
+              <div className="mt-4 grid grid-cols-2 gap-3 text-sm text-white">
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-white" /> Free Assessment
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-white" /> Expert Team
+                </div>
+              </div>
+            </div>
+
+            {/* 🔥 Service List */}
+            <div className="rounded-3xl bg-black/40 border border-white/10 p-6">
+              <div className="flex items-center gap-2 text-lg font-semibold mb-3">
+                <Star className="w-5 h-5 text-[#ff1f00]" /> Our Services
+              </div>
+
+              <div className="space-y-4">
+                {[
+                  {
+                    title: "Website Strategy & Development",
+                    desc: "We craft bespoke websites that combine design excellence with technical precision",
+                  },
+                  {
+                    title: "Cybersecurity & Threat Management",
+                    desc: "Your business deserves uncompromising protection",
+                  },
+                  {
+                    title: "Digital Support Outsourcing",
+                    desc: "Scale your business with our dedicated experts.",
+                  },
+                ].map((srv, i) => (
+                  <div key={i} className="rounded-2xl border border-white/10 p-4">
+                    <div className="font-semibold">{srv.title}</div>
+                    <p className="text-sm text-gray-300">{srv.desc}</p>
+                  </div>
+                ))}
+              </div>
+
+              <Link href="/service" className="mt-5 block">
+                <button className="w-full inline-flex items-center justify-center gap-2 bg-[#ff1f00] px-5 py-3 rounded-xl font-semibold">
+                  View All Services
+                </button>
+              </Link>
+            </div>
+
+            {/* 🔥 Expert Advice */}
+            <div className="rounded-3xl bg-black/40 border border-white/10 p-6">
+              <div className="mx-auto w-12 h-12 rounded-full bg-[#ff1f00] flex items-center justify-center mb-3">
+                <MessageSquare className="w-6 h-6" />
+              </div>
+
+              <h4 className="text-lg font-semibold text-center">Need Expert Advice?</h4>
+              <p className="text-gray-300 text-center mt-1">
+                Talk to our cybersecurity experts about your challenges.
+              </p>
+
+              <Link href="/contactus" className="block mt-4">
+                <button className="w-full bg-white text-[#ff1f00] hover:bg-red-50 px-5 py-3 rounded-xl font-semibold">
+                  Contact Us
+                </button>
+              </Link>
+            </div>
+          </aside>
         </div>
       </main>
 
-    <Footer/>
+      <Footer />
     </div>
   );
 }
-    

@@ -1,42 +1,25 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import mauritiushealthtravel from "../../Assests/mauritiushealthtravel.png"
 import {
-  Instagram,
-  Facebook,
-  Linkedin as Linked,
-  X,
-  ArrowRight,
-  Navigation2Off,
+  TrendingUp,
+  Globe,
+  CheckCircle,
+  Star,
+  MessageSquare,
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
-/* Assets used by header/footer (kept unchanged) */
+/* Assets */
 import logo from "../../Assests/srv.svg";
-import logo2 from "../../Assests/newlogo.png";
-import header from "../../Assests/HEADER.png";
-import mobile from "../../Assests/new.jpeg";
-import selected from "../../Assests/selected.png";
-import nonselected from "../../Assests/nonselected.png";
-import map from "../../Assests/map.png";
+import noumarmite from "../../Assests/noumarmite.png";
+
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 
 export default function ServicesPage() {
-  
-  /* animation helpers */
-  const backdropVariants = { hidden: { opacity: 0 }, visible: { opacity: 0.55 }, exit: { opacity: 0 } };
-  const panelVariants = {
-    hidden: { opacity: 0, y: -30, rotateX: 14, transformOrigin: "top center", scale: 0.995 },
-    visible: { opacity: 1, y: 0, rotateX: 0, scale: 1, transition: { duration: 0.3, ease: [0.22, 0.8, 0.2, 1] } },
-    exit: { opacity: 0, y: -28, rotateX: 12, scale: 0.995, transition: { duration: 0.22, ease: "easeInOut" } },
-  };
-  const listContainer = { hidden: {}, visible: { transition: { staggerChildren: 0.05, delayChildren: 0.06 } } };
-  const listItem = { hidden: { opacity: 0, y: 8 }, visible: { opacity: 1, y: 0, transition: { duration: 0.22, ease: "easeOut" } } };
-
   return (
     <div
       className="min-h-screen text-white"
@@ -47,28 +30,74 @@ export default function ServicesPage() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <Navbar/>
-      {/* helper for mobile bg repeat */}
+      <Navbar />
+
+      {/* Mobile background fix */}
       <style>{`
         @media (max-width: 640px) {
-          .bg-hero { background-repeat: repeat-y !important; background-size: 100% auto !important; background-position: top center !important; }
+          .bg-hero { 
+            background-repeat: repeat-y !important; 
+            background-size: 100% auto !important; 
+            background-position: top center !important; 
+          }
         }
-       
       `}</style>
 
-     
-    
+      {/* ================== MAIN CONTENT ================== */}
+      <main className="py-10">
+        <div className="mx-auto max-w-[1200px] px-6 grid grid-cols-1 lg:grid-cols-3 gap-10">
 
-      {/* ================== MAIN: TEXT-ONLY FULL PAGE CASE STUDY (REPLACED WITH CASE STUDY 2) ================== */}
-      <main className="py-16">
-        <div className="mx-auto max-w-[900px] px-6">
-          <article className="bg-black/30 border border-white/6 rounded-2xl p-8 md:p-12">
-            <h1 className="text-2xl md:text-3xl font-semibold text-white mb-6">Mauritius Health Travel: Connecting Patients to World-Class Treatments</h1>
+          {/* ================== LEFT CASE STUDY ================== */}
+          <article className="bg-black/30 border border-white/6 rounded-2xl p-8 md:p-12 lg:col-span-2">
 
+            {/* === Image + Title Row === */}
+            <div className="flex items-center gap-4 mb-6">
+              <Image
+  src={mauritiushealthtravel}
+  alt="Mauritius Health Travel"
+  className="w-12 h-12 rounded-xl object-contain"
+/>
+
+              <h2 className="text-sm font-medium text-gray-300 uppercase tracking-wide">
+                A case study of:{" "}
+                <span className="text-[#ff1f00] font-semibold">
+                  Mauritius Health Travel
+                </span>
+              </h2>
+            </div>
+
+            {/* === Chips Section === */}
+            <div className="flex flex-wrap gap-3 mb-6">
+
+  <span className="inline-flex items-center whitespace-nowrap px-4 py-2 bg-[#333333] border border-transparent hover:border-[#ff1f00] text-[#ff1f00] text-xs rounded-full">
+    Industry: Travel & Hospitality
+  </span>
+
+  <span className="inline-flex items-center whitespace-nowrap px-4 py-2 bg-[#333333] border border-transparent hover:border-[#ff1f00] text-[#ff1f00] text-xs rounded-full">
+    Service: Marketing & Branding
+  </span>
+  <a
+  href="https://mauritiushealthtravel.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center whitespace-nowrap px-4 py-2 bg-[#333333] border border-transparent hover:border-[#ff1f00] text-[#ff1f00] text-xs rounded-full"
+>
+  Visit Website
+</a>
+
+
+</div>
+
+            {/* === MAIN TITLE === */}
+            <h1 className="text-2xl md:text-3xl font-semibold text-white mb-6">
+              Mauritius Health Travel: Connecting Patients to World-Class Treatments
+            </h1>
+
+            {/* === CONTENT === */}
             <h2 className="text-[#ff1f00] font-semibold mb-2">Client Overview</h2>
             <p className="text-white/90 mb-6">
-              Mauritius Health Travel connects patients in Mauritius with leading medical providers in India, offering seamless access to world-class treatments, consultations, and post-treatment support.
-              Before partnering with BIM Africa, the client lacked a professional digital presence, limiting their ability to:
+              Mauritius Health Travel connects patients in Mauritius with leading medical providers in India,
+              offering seamless access to world-class treatments, consultations, and post-treatment support.
             </p>
 
             <ul className="list-disc list-inside text-white/90 mb-6 space-y-2">
@@ -77,75 +106,145 @@ export default function ServicesPage() {
               <li>Streamline inquiries and patient onboarding</li>
             </ul>
 
-            <p className="text-white/90 mb-6">
-              The goal was clear: Develop a secure, professional, and high-performance online platform that communicates trust, reliability, and medical expertise to both patients and international partners.
-            </p>
-
             <h2 className="text-[#ff1f00] font-semibold mb-2">The Challenge</h2>
             <p className="text-white/90 mb-4">
-              The healthcare and medical tourism industry is highly sensitive — trust, security, and professionalism are critical. BIM Africa needed to build a platform that would:
+              The healthcare and medical tourism industry is highly sensitive — trust, security, and professionalism are critical.
             </p>
 
             <ul className="list-disc list-inside text-white/90 mb-6 space-y-2">
               <li>Showcase medical services and treatment options clearly</li>
               <li>Provide a user-friendly interface for patients to submit inquiries</li>
               <li>Establish authority and credibility with international providers</li>
-              <li>Ensure compliance with privacy and data protection standards</li>
+              <li>Ensure compliance with privacy & data protection standards</li>
             </ul>
 
             <h2 className="text-[#ff1f00] font-semibold mb-2">Our Approach</h2>
-            <p className="text-white/90 mb-4">
-              BIM Africa took a strategic and technical approach, focusing on both design and performance:
-            </p>
 
-            <h3 className="text-white font-semibold mb-2">Step 1 — Discovery &amp; Content Strategy</h3>
+            <h3 className="text-white font-semibold mb-2">Step 1 — Discovery & Strategy</h3>
             <p className="text-white/90 mb-4">
-              We worked closely with Mauritius Health Travel to understand patient journeys, common questions, and key selling points for medical treatments abroad. The website structure was designed to guide visitors from awareness → confidence → action (inquiry submission).
+              We worked closely with Mauritius Health Travel to understand patient journeys, common questions,
+              and the core value proposition of medical travel.
             </p>
 
             <h3 className="text-white font-semibold mb-2">Step 2 — Premium Design</h3>
             <p className="text-white/90 mb-4">
-              The design was clean, minimal, and professional — conveying trust and expertise:
+              The design is clean, minimal, and professional — conveying trust and expertise.
             </p>
-            <ul className="list-disc list-inside text-white/90 mb-6 space-y-2">
-              <li>Clear hierarchy of information for treatments, services, and partners</li>
-              <li>Strong visual elements to highlight safety, quality, and care</li>
-              <li>Intuitive navigation to reduce friction in booking consultations</li>
-            </ul>
 
             <h3 className="text-white font-semibold mb-2">Step 3 — High-Performance Development</h3>
-            <p className="text-white/90 mb-4">
-              The platform was developed to ensure speed, security, and reliability:
-            </p>
+            <p className="text-white/90 mb-4">Built for speed, security, and reliability.</p>
+
             <ul className="list-disc list-inside text-white/90 mb-6 space-y-2">
-              <li>SSL encryption for secure patient inquiries</li>
-              <li>Optimized pages for global performance, especially targeting patients accessing from Mauritius and India</li>
-              <li>SEO-ready architecture to improve visibility for patients searching for medical travel services</li>
-              <li>Scalable design to accommodate future services and partner listings</li>
+              <li>SSL encryption for secure inquiries</li>
+              <li>Optimized for global performance (Mauritius + India)</li>
+              <li>SEO-ready architecture</li>
+              <li>Scalable infrastructure for future services</li>
             </ul>
 
             <h2 className="text-[#ff1f00] font-semibold mb-2">The Outcome</h2>
             <p className="text-white/90 mb-4">
-              Mauritius Health Travel now operates a professional, trustworthy, and user-friendly digital platform, giving patients confidence to make informed medical decisions.
+              Mauritius Health Travel now operates a professional, trustworthy digital platform,
+              giving patients confidence to make informed medical decisions.
             </p>
 
-            <h3 className="text-[#ff1f00] font-semibold mb-3">Key outcomes include:</h3>
             <ul className="text-white/90 list-none space-y-2 mb-6">
-              <li>●✅ Increased patient inquiries and international engagement</li>
-              <li>●✅ Stronger trust signals with secure forms and professional presentation</li>
-              <li>●✅ Optimized for both local and international audiences</li>
-              <li>●✅ Scalable, reliable infrastructure for future growth</li>
+              <li>● Increased patient inquiries</li>
+              <li>● Stronger trust signals & secure forms</li>
+              <li>● Optimized for global audiences</li>
+              <li>● Scalable for growth</li>
             </ul>
 
             <h3 className="text-[#ff1f00] font-semibold mb-2">Reflection</h3>
             <p className="text-white/90">
-              This project highlights BIM Africa’s ability to transform high-stakes industries digitally. For medical tourism, credibility is everything — and a modern, high-performance website is the first step in earning patient trust. By combining premium design and technical precision, Mauritius Health Travel now offers a digital experience that reflects the quality and safety of the medical services they provide, positioning the brand as a trusted bridge between Mauritius and world-class healthcare providers in India.
+              This project highlights BIM Africa’s ability to deliver high-performance platforms for sensitive industries.
             </p>
           </article>
+
+          {/* ================== RIGHT SIDEBAR ================== */}
+          <aside className="space-y-6">
+
+            {/* 🔥 Consultation Box */}
+            <div className="rounded-3xl bg-[#ff1f00] p-6">
+              <div className="mx-auto w-16 h-16 rounded-full border border-[#ff1f00] flex items-center justify-center mb-4">
+                <TrendingUp className="w-7 h-7 text-white" />
+              </div>
+
+              <h4 className="text-xl font-semibold text-center">Ready to Secure Your Business?</h4>
+              <p className="text-gray-200 text-center mt-2">
+                Get expert cybersecurity consultation tailored to your needs
+              </p>
+
+              <a
+                href="https://quotation.bim.africa/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block mt-4"
+              >
+                <button className="w-full inline-flex items-center justify-center gap-2 bg-white text-[#ff1f00] hover:bg-red-50 px-5 py-3 rounded-xl font-semibold">
+                  <Globe className="w-4 h-4" /> Get Free Consultation
+                </button>
+              </a>
+
+              <div className="mt-4 grid grid-cols-2 gap-3 text-sm text-white">
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-white" /> Free Assessment
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-white" /> Expert Team
+                </div>
+              </div>
+            </div>
+
+            {/* 🔥 Services List */}
+            <div className="rounded-3xl bg-black/40 border border-white/10 p-6">
+              <div className="flex items-center gap-2 text-lg font-semibold mb-3">
+                <Star className="w-5 h-5 text-[#ff1f00]" /> Our Services
+              </div>
+
+              <div className="space-y-4">
+                {[
+                  { title: "Website Strategy & Development", desc: "We craft bespoke websites tailored to your goals." },
+                  { title: "Cybersecurity & Threat Management", desc: "Your business deserves enterprise-level protection." },
+                  { title: "Digital Support Outsourcing", desc: "Scale your operations with dedicated experts." },
+                ].map((srv, i) => (
+                  <div key={i} className="rounded-2xl border border-white/10 p-4">
+                    <div className="font-semibold">{srv.title}</div>
+                    <p className="text-sm text-gray-300">{srv.desc}</p>
+                  </div>
+                ))}
+              </div>
+
+              <Link href="/service" className="mt-5 block">
+                <button className="w-full inline-flex items-center justify-center gap-2 bg-[#ff1f00] px-5 py-3 rounded-xl font-semibold">
+                  View All Services
+                </button>
+              </Link>
+            </div>
+
+            {/* 🔥 Expert Advice */}
+            <div className="rounded-3xl bg-black/40 border border-white/10 p-6">
+              <div className="mx-auto w-12 h-12 rounded-full bg-[#ff1f00] flex items-center justify-center mb-3">
+                <MessageSquare className="w-6 h-6" />
+              </div>
+
+              <h4 className="text-lg font-semibold text-center">Need Expert Advice?</h4>
+              <p className="text-gray-300 text-center mt-1">
+                Talk to our cybersecurity experts about your challenges.
+              </p>
+
+              <Link href="/contactus" className="block mt-4">
+                <button className="w-full bg-white text-[#ff1f00] hover:bg-red-50 px-5 py-3 rounded-xl font-semibold">
+                  Contact Us
+                </button>
+              </Link>
+            </div>
+
+          </aside>
+
         </div>
       </main>
 
-    <Footer/>
+      <Footer />
     </div>
   );
 }

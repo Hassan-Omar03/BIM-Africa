@@ -54,7 +54,7 @@ export default function ServiceCards() {
               className="w-16 sm:w-20 lg:w-[100px] h-auto"
             />
             <Link
-              href="/WebsiteStrategy"
+              href="/CyberSecurity"
               className="font-medium text-white text-sm sm:text-base hover:text-[#ff1f00] inline-flex items-center gap-1 group"
             >
               Know more
@@ -86,7 +86,7 @@ export default function ServiceCards() {
               className="w-16 sm:w-20 lg:w-[100px] h-auto"
             />
             <Link
-              href="/WebsiteStrategy"
+              href="/DigitalSupport"
               className="font-medium text-white text-sm sm:text-base hover:text-[#ff1f00] inline-flex items-center gap-1 group"
             >
               Know more

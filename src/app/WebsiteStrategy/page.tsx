@@ -462,11 +462,11 @@ const t = {
               </div>
               <div className="flex items-center gap-2 text-white/90">
                 <Award className="w-5 h-5 text-[#ff1f00]" />
-                <span>Award Winning Agency</span>
+                <span>Recognized for Excellence</span>
               </div>
               <div className="flex items-center gap-2 text-white/90">
                 <ShieldCheck className="w-5 h-5 text-[#ff1f00]" />
-                <span>ISO Certified</span>
+                <span>Industry-Leading Standards</span>
               </div>
             </div>
           </div>
