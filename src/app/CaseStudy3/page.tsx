@@ -63,7 +63,7 @@ export default function ServicesPage() {
             <div className="flex flex-wrap gap-3 mb-6">
 
   <span className="inline-flex items-center whitespace-nowrap px-4 py-2 bg-[#333333] border border-transparent hover:border-[#ff1f00] text-[#ff1f00] text-xs rounded-full">
-    Industry: Lifestyle & Training
+    Industry: Travel & Tourism
   </span>
 
   <span className="inline-flex items-center whitespace-nowrap px-4 py-2 bg-[#333333] border border-transparent hover:border-[#ff1f00] text-[#ff1f00] text-xs rounded-full">
