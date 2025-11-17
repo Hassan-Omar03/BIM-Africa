@@ -234,18 +234,17 @@ export default function ServicesPage() {
         <div className="space-y-8 sm:space-y-12">
           <div className="text-center">
             <h3 className="text-[#ff1f00] text-xl sm:text-2xl">
-              Social Media Management
+              Next-Gen Website Performance
             </h3>
             <p className="text-white text-sm sm:text-base mt-4">
-              Our social media Management services focus on building and enhancing your brands online presence. We create engaging content, manage your social media accounts, and analyze performance.
-            </p>
+              We craft A+ grade websites using Next.js for ultra-fast performance and scalability. From custom design and development to robust cybersecurity, we build secure, high-performance platforms that grow with your business.
           </div>
           <div className="text-center">
             <h3 className="text-[#ff1f00] text-xl sm:text-2xl">
-              E-commerce Solutions
+              Uncompromising Cybersecurity
             </h3>
             <p className="text-white text-sm sm:text-base mt-4">
-              Our e-commerce solutions are designed to create seamless online shopping experiences for user-friendly website design to secure payment processing processing and inventory management.
+              Our proactive security solutions protect your site with real-time threat detection, malware removal, and continuous monitoring. Built for scalability and speed, your website stays secure while growing seamlessly.
             </p>
           </div>
         </div>
