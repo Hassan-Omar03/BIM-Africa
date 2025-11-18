@@ -187,6 +187,7 @@ export default function ArticlePage(): React.JSX.Element {
             <div className="h-5 w-3/6 bg-white/10 animate-pulse rounded-xl"></div>
           </div>
         </section>
+      {/* deploymrn test */}
 
         <Footer />
       </div>
