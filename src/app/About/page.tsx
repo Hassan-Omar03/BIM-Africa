@@ -116,21 +116,7 @@ export default function ServicesPage() {
     </div>
 
   </div>
-
-  {/* ✅ Buttons placed OUTSIDE image container */}
- <div className="mt-6 flex flex-wrap gap-4 items-center justify-center md:justify-start">
-  <Link href="/service">
-    <button className="w-full sm:w-auto min-w-[180px] bg-[#333333] border border-transparent hover:border-[#ff1f00] text-white px-8 sm:px-10 lg:px-12 py-3 sm:py-4 rounded-full transition-all hover:scale-105 text-sm sm:text-base whitespace-nowrap">
-      View Services
-    </button>
-  </Link>
-
-  <Link href="/contactus">
-    <button className="w-full sm:w-auto min-w-[180px] bg-[#333333] border border-transparent hover:border-[#ff1f00] text-white px-8 sm:px-10 lg:px-12 py-3 sm:py-4 rounded-full transition-all hover:scale-105 text-sm sm:text-base whitespace-nowrap">
-      Start Your Project
-    </button>
-  </Link>
-</div></div>
+</div>
             
         </div>
       </section>
